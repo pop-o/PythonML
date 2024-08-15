@@ -1,0 +1,2 @@
+This is lung cancer prediction which shows chances of cancer (Low,medium and high) done using linear regression model which is trained in the cancer_dataset.csv. this is trained using the 900 data in the csv file and the last 99 data are used for the testing.
+The output "Predicted Lung Cancer.csv" is a csv file containing the chances of cancer where the lower the number the lower the chance and the higher the number higher the chance.
