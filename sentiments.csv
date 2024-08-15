@@ -1,0 +1,72 @@
+sentence,sentiment_scores,positive,negative
+I had a fantastic time at the party last night.,0.743,True,False
+The movie was incredibly boring and dull.,-0.6764,False,True
+She did an amazing job on her presentation.,0.5859,True,False
+The weather today is absolutely dreadful.,-0.4927,False,True
+I love the new features in the software update.,0.6369,True,False
+The service at the restaurant was terrible and slow.,-0.4767,False,True
+I had a wonderful vacation in the mountains.,0.5719,True,False
+The book was quite disappointing and not engaging.,-0.6735,False,True
+The new smartphone is incredibly innovative.,0.4927,True,False
+I found the lecture to be rather uninteresting.,0.0,neutral,neutral
+The concert was superb and exceeded all my expectations.,0.6249,True,False
+My experience with the customer service was frustrating.,-0.4404,False,True
+The meal was delicious and well-prepared.,0.5719,True,False
+The hotel room was small and very uncomfortable.,-0.4391,False,True
+I’m thrilled with the results of my exam.,0.4404,True,False
+The project was poorly managed and a complete failure.,-0.5106,False,True
+The new café in town is cozy and charming.,0.5859,True,False
+I was let down by the product quality.,0.0,neutral,neutral
+The team did an excellent job on the new campaign.,0.5719,True,False
+The noise from the construction site is extremely irritating.,-0.5095,False,True
+The cake at the bakery was absolutely delightful.,0.624,True,False
+The traffic was terrible and caused a lot of delays.,-0.4767,False,True
+I enjoyed the holiday season with family and friends.,0.8442,True,False
+The workshop was a waste of time and poorly organized.,-0.4215,False,True
+The view from the top of the hill is breathtaking.,0.5859,True,False
+The customer support was unhelpful and rude.,-0.0772,False,True
+I am very pleased with the outcome of the project.,0.4927,True,False
+The movie was a letdown and didn’t live up to the hype.,0.0,neutral,neutral
+The gym facilities are top-notch and well-maintained.,0.0,neutral,neutral
+The cleanliness of the apartment was quite poor.,-0.5256,False,True
+I appreciate the thoughtful gift you gave me.,0.802,True,False
+The flight experience was awful and stressful.,-0.743,False,True
+The new restaurant has a fantastic ambiance.,0.5574,True,False
+The instructions were confusing and misleading.,-0.5574,False,True
+The new book is incredibly captivating and well-written.,0.0,neutral,neutral
+The sales team was unresponsive and disorganized.,-0.296,False,True
+The service at the spa was exceptional and relaxing.,0.4939,True,False
+The software crashes frequently and is frustrating to use.,-0.4404,False,True
+I’m excited about the new opportunities ahead.,0.6124,True,False
+The dinner was overpriced and not worth the money.,-0.1695,False,True
+The concert performance was electrifying and memorable.,0.0,neutral,neutral
+The product didn’t meet my expectations and was defective.,-0.4404,False,True
+I enjoyed every moment of the beautiful sunset.,0.802,True,False
+The presentation was poorly done and lacked substance.,0.0,neutral,neutral
+The new car has exceeded all my expectations.,0.0,neutral,neutral
+The hotel staff was rude and unaccommodating.,-0.4588,False,True
+The community event was a huge success.,0.7184,True,False
+The noise from the neighbors is quite bothersome.,-0.3804,False,True
+I’m thrilled with the improvements in the new version.,0.6369,True,False
+The service at the fast food place was subpar.,0.0,neutral,neutral
+The beach vacation was relaxing and enjoyable.,0.7269,True,False
+The game was frustrating and full of glitches.,-0.4404,False,True
+I’m delighted with the outcome of the meeting.,0.5106,True,False
+The customer service experience was disappointing.,-0.4939,False,True
+The garden is looking beautiful and vibrant.,0.8074,True,False
+The restaurant had a terrible ambiance and service.,-0.4767,False,True
+I’m really happy with my new haircut.,0.6115,True,False
+The lecture was monotonous and hard to follow.,-0.1027,False,True
+The new feature in the app is very user-friendly.,0.0,neutral,neutral
+The hotel room was dirty and not well-maintained.,-0.4404,False,True
+I had a blast at the amusement park yesterday.,0.3612,True,False
+The product packaging was poor and flimsy.,-0.4767,False,True
+The new paint job on the house looks fantastic.,0.5574,True,False
+The food at the event was bland and tasteless.,0.0,neutral,neutral
+I’m satisfied with the level of service provided.,0.4215,True,False
+The experience at the dentist was very uncomfortable.,-0.4391,False,True
+The new dress looks stunning on you.,0.3818,True,False
+The project did not go as planned and was disappointing.,-0.4939,False,True
+The museum visit was educational and enjoyable.,0.4404,True,False
+The phone call with customer support was frustrating.,-0.0516,False,True
+The outdoor adventure was exhilarating and fun.,0.8074,True,False

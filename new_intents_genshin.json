@@ -1,0 +1,349 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Hi there",
+        "Good morning",
+        "Good afternoon",
+        "Greetings",
+        "What's up?",
+        "How are you?"
+      ],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there! How can I help?",
+        "Hey! How can I be of service today?",
+        "Hello! What can I do for you?"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you later",
+        "take care",
+        "Catch you later",
+        "Farewell",
+        "See you soon"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later! Enjoy your adventures in Teyvat."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Appreciate it",
+        "Thanks a lot",
+        "Thank you very much",
+        "I appreciate your help"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "No problem!",
+        "Anytime!"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "game_info",
+      "patterns": [
+        "Tell me about Genshin Impact",
+        "What is Genshin Impact?",
+        "Give me details on Genshin Impact",
+        "Can you tell me about Genshin Impact?"
+      ],
+      "responses": [
+        "Genshin Impact is an open-world action RPG developed by miHoYo. Set in the fantasy world of Teyvat, it features elemental magic, a gacha system, and an expansive world to explore.",
+        "Genshin Impact is an action role-playing game developed and published by miHoYo (with publishing outside mainland China under Cognosphere, d/b/a HoYoverse). It was released for Android, iOS, PlayStation 4, and Windows in 2020, and for PlayStation 5 in 2021.",
+        ""
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "date",
+      "patterns": [
+        "when was Genshin impact released?",
+        "When was genshin impact developed",
+        "what date was genshin impact released",
+        "when was the date genshin impact was realeased",
+        "date of genshin release",
+        "genshin impact date"
+      ],
+      "responses": [
+        "genshin impact was released in 2020",
+        "genshin impact was released globally in 2020",
+        "genshin impact was released in september of 2020"
+      ]
+    },
+    {
+      "tag": "more_game_info",
+      "patterns": [
+        "Tell me more about Genshin Impact",
+        "Describe more about Genshin Impact",
+        "Give me more details about Genshin Impact",
+        "Can you tell me more about Genshin Impact?",
+        "more info about genshin impact",
+        "more details about genshin"
+      ],
+      "responses": [
+        "You can visit the wikipedia page for detailed story about the game at <https://en.wikipedia.org/wiki/Genshin_Impact>",
+        "You have the option to check out the Wikipedia article for a more in-depth look at the game on <https://en.wikipedia.org/wiki/Genshin_Impact>"
+      ],
+      "context": ["game_info"]
+    },
+    {
+      "tag": "memory",
+      "patterns": [
+        "how large is genshin impact?",
+        "what is the size of genshin impact?",
+        "how much memory does genshin impact occupy?",
+        "how much space does genshin impact take?",
+        "how many gb is genshin impact?",
+        "how many gbs is genshin impact?",
+        "how many gigabytes is genshin impact?",
+        "how much space does genshin impact occupy?",
+        "genshin impact size"
+      ],
+      "responses": [
+        "Genshin impact is 90 gb",
+        "Genshin impact occupies 90 gb of space",
+        "Genshin impact takes 90 gb of memory",
+        "Genshin impact has a size of 90 gigabytes"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "story",
+      "patterns": [
+        "What is the story of Genshin Impact",
+        "Story behind the game",
+        "Plot of the game",
+        "story of the game",
+        "Genshin Impact story"
+      ],
+      "responses": [
+        "Genshin Impact takes place in the world of Teyvat, composed of seven major nations, each of which is ruled by a different god called an 'Archon', tied to a different element and ideal, and governed by a specific faction.",
+        "Genshin Impact is set in the realm of Teyvat, consisting of seven main nations, governed by individual deities known as 'Archons', associated with a unique element and belief, and overseen by a particular group.",
+        "In the Teyvat world of Genshin Impact, there are seven major nations, each controlled by a unique Archon deity linked to a specific element and belief, and led by a distinct faction."
+      ],
+      "context": [""]
+    },
+
+    {
+      "tag": "characters",
+      "patterns": [
+        "Tell me about the characters",
+        "Who are the characters in Genshin Impact?",
+        "Information on characters",
+        "Characters",
+        "Character info",
+        "Info about characters"
+      ],
+      "responses": [
+        "Genshin Impact features a wide range of characters, each with unique abilities and elemental affinities. Key characters include Aether/Lumine, Diluc, Jean, and Mona.",
+        "In Genshin Impact, you can encounter a diverse set of characters like Fischl, a skilled archer with Electro powers, and Beidou, who wields powerful Electro abilities and commands a fleet.",
+        "Genshin Impact has an extensive roster of characters, each associated with different elements and regions. Notable characters include Amber, who excels in Pyro abilities, and Zhongli, a master of Geo elements.",
+        "Among the characters in Genshin Impact are characters like Ningguang, who uses Geo elements for her powerful geo constructs, and Venti, a bard with Anemo abilities who controls the wind.",
+        "The game features characters such as Xiao, a vigilant adeptus with Anemo powers, and Keqing, known for her fast-paced Electro attacks and sharp combat skills."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "quests",
+      "patterns": [
+        "What quests are available?",
+        "Tell me about the quests",
+        "Information on quests",
+        "What kinds of quests can I do in Genshin Impact?",
+        "Can you list the types of quests in the game?",
+        "How can I find new quests in Genshin Impact?",
+        "Are there any special or limited-time quests available?"
+      ],
+      "responses": [
+        "Genshin Impact offers various types of quests including main story quests, side quests, and world quests. Check your quest log in-game for current quests and their objectives.",
+        "In Genshin Impact, quests come in various forms, including Archon Quests that advance the main storyline, Story Quests focused on individual characters, and Commission Quests that provide daily challenges and rewards.",
+        "You can find different types of quests in Genshin Impact such as World Quests that are scattered throughout the game world, Seasonal Events with unique challenges, and Side Quests that explore additional stories and character backstories.",
+        "There are numerous quests to undertake in Genshin Impact, including Daily Commissions which offer regular rewards, and Special Quests tied to events or specific in-game activities that change over time.",
+        "The game features a variety of quests including the main Archon Quests, which progress the central story, as well as Side Quests that provide additional lore and interactions with the world.",
+        "Quests in Genshin Impact include challenging activities like Bounties, where you hunt down specific targets, and Expedition Quests, which involve sending your characters on missions to gather resources or complete tasks.",
+        "To stay updated on the latest quests, you can check the in-game Quest Journal or visit the official Genshin Impact website for news on new or ongoing events and quests available for players."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "regions",
+      "patterns": [
+        "Can you tell me about the regions in Genshin Impact?",
+        "What regions are there in Genshin Impact?",
+        "Describe the different regions in Genshin Impact.",
+        "What are the names of the regions in Genshin Impact?",
+        "Give me some information on Genshin Impact's regions."
+      ],
+      "responses": [
+        "Genshin Impact features several regions including Mondstadt, Liyue, Inazuma, and Sumeru. Each region has its unique culture and storylines.",
+        "In Genshin Impact, you'll explore regions like Mondstadt, Liyue, Inazuma, and Sumeru, each offering distinct environments and lore.",
+        "The game has diverse regions such as Mondstadt, Liyue, Inazuma, and Sumeru, each with its own background and features.",
+        "Regions in Genshin Impact include Mondstadt, Liyue, Inazuma, and Sumeru. Each has a special setting and narrative.",
+        "You can visit different regions in Genshin Impact, such as Mondstadt, Liyue, Inazuma, and Sumeru, each providing a unique experience and story."
+      ],
+      "context": ["story"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "What types of items are available in Genshin Impact?",
+        "Can you tell me about the items in Genshin Impact?",
+        "Describe the items in Genshin Impact.",
+        "What are the different items in Genshin Impact?",
+        "Give me some information on Genshin Impact's items."
+      ],
+      "responses": [
+        "Genshin Impact features various items including weapons, artifacts, and consumables. Each item has specific effects and uses in the game.",
+        "In Genshin Impact, you can find items such as weapons, artifacts, and consumables. Each item serves a different purpose and has unique attributes.",
+        "The game includes a range of items like weapons, artifacts, and consumables. These items have different effects and roles within the game.",
+        "Items in Genshin Impact range from weapons and artifacts to consumables, each providing different benefits and functions during gameplay.",
+        "Genshin Impact offers various items, including weapons, artifacts, and consumables. Each item contributes differently to your gameplay experience."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "How do I reach out for support in Genshin Impact?",
+        "What are the contact details for Genshin Impact support?",
+        "How can I get help or contact the support team?",
+        "Tell me how to contact Genshin Impact customer service.",
+        "Where can I find support for Genshin Impact?"
+      ],
+      "responses": [
+        "For support, visit the official Genshin Impact website, use the in-game support option, or reach out through their social media channels.",
+        "You can contact Genshin Impact support by visiting their official website, using the in-game support feature, or connecting via their social media accounts.",
+        "To get support, go to the Genshin Impact website, use the in-game support system, or contact them through their social media platforms.",
+        "Support for Genshin Impact can be accessed via their official website, in-game support options, or by reaching out on their social media channels.",
+        "For assistance, you can visit the Genshin Impact website, use the support feature in the game, or contact their support team through social media."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "weapons",
+      "patterns": [
+        "What types of weapons can I find in Genshin Impact?",
+        "Tell me about the different weapons available in the game.",
+        "Can you provide information on the weapon types in Genshin Impact?",
+        "What are the various weapons in Genshin Impact?",
+        "Give me an overview of the weapons and how to get them."
+      ],
+      "responses": [
+        "In Genshin Impact, weapons include swords, bows, polearms, claymores, and catalysts. Each weapon type has unique stats and can be obtained through quests, gacha pulls, and crafting.",
+        "The game features several weapon types such as swords, bows, polearms, claymores, and catalysts. Each type has specific stats and can be acquired through various in-game activities.",
+        "Weapons in Genshin Impact are categorized into swords, bows, polearms, claymores, and catalysts. You can obtain them through exploration, events, and the gacha system.",
+        "You can find different weapons in Genshin Impact, including swords, bows, polearms, claymores, and catalysts. Each weapon type has distinct stats and can be acquired by completing challenges or using the gacha system.",
+        "Genshin Impact offers a variety of weapons such as swords, bows, polearms, claymores, and catalysts. Each weapon type has unique attributes and can be obtained through gameplay, events, or the gacha pulls."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "artifacts",
+      "patterns": [
+        "What are artifacts in Genshin Impact?",
+        "Can you explain artifact sets and their bonuses?",
+        "How do artifacts function in the game?",
+        "Tell me about the different artifact sets and how to upgrade them.",
+        "What do artifacts do and how can I enhance them?"
+      ],
+      "responses": [
+        "Artifacts in Genshin Impact are equipment pieces that provide various bonuses to your characters. They come in different sets, each offering unique effects and enhancements.",
+        "Artifact sets in Genshin Impact consist of different pieces like a flower, feather, sands, goblet, and circlet. Each set provides specific bonuses when you equip multiple pieces from the same set. You can upgrade artifacts using enhancement materials to increase their stats.",
+        "Artifacts are gear that boost your character’s abilities in Genshin Impact. They are categorized into different sets with unique bonuses. You can enhance artifacts by using materials to improve their stats and unlock additional effects.",
+        "In Genshin Impact, artifact sets include pieces such as flowers, feathers, sands, goblets, and circlets. Equipping multiple pieces from the same set grants special bonuses. Artifacts can be upgraded using enhancement materials to enhance their stats and effects.",
+        "Artifacts provide various bonuses to your characters in Genshin Impact and come in different sets. Each set has unique bonuses that activate when you equip multiple pieces. You can improve artifacts by using enhancement materials to boost their performance and unlock additional bonuses."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "Teams",
+      "patterns": [
+        "What are the best team compositions for Genshin Impact?",
+        "How do I build an effective team in Genshin Impact?",
+        "Can you explain team synergy and how to use it?",
+        "What are some tips for creating a strong team setup?",
+        "Tell me about optimal team setups and character synergy."
+      ],
+      "responses": [
+        "The best team compositions in Genshin Impact often include a mix of damage dealers, support characters, and healers. Effective teams usually consist of characters with complementary abilities that enhance each other’s strengths and cover weaknesses.",
+        "To build a good team, consider including characters that provide elemental reactions, healing, and crowd control. Combining characters with compatible elements and roles can maximize damage and survivability.",
+        "Team synergy in Genshin Impact involves pairing characters whose abilities interact well together. For example, using a Pyro character with a Hydro character can trigger powerful Vaporize reactions, enhancing overall damage.",
+        "For a strong team setup, focus on creating a balanced composition with a DPS (damage dealer), a support character, a healer, and a character that can provide crowd control or elemental reactions. Ensuring that characters' skills complement each other is key.",
+        "Optimal team setups in Genshin Impact often involve characters that can trigger effective elemental reactions and provide various forms of support. Balancing roles such as DPS, healer, and support while considering elemental synergies will improve team performance."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "Farming",
+      "patterns": [
+        "Where can I farm resources in Genshin Impact?",
+        "Tell me about farming materials in the game.",
+        "How can I efficiently farm resources in Genshin Impact?",
+        "What are the best locations for farming materials?",
+        "Give me tips for effective farming in Genshin Impact."
+      ],
+      "responses": [
+        "You can farm resources in various locations throughout Genshin Impact. For example, you can find ores in Mondstadt and Liyue, plants and animals in specific regions, and rare materials in elite boss areas and domains.",
+        "Farming materials in Genshin Impact involves collecting resources like ores, plants, and enemy drops. Key locations include specific regions for gathering items and dungeons for farming rare materials.",
+        "To farm efficiently, plan your route to cover resource-rich areas, use characters with abilities that help in gathering, and prioritize daily commissions and activities that yield valuable materials.",
+        "Some of the best locations for farming materials include the regions of Mondstadt for ores and plants, Liyue for special items and ores, and the domains and elite boss areas for high-level materials.",
+        "Effective farming involves targeting resource-rich areas, using characters with skills that enhance gathering, and making use of daily commissions and events to maximize your resource collection."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "Are there any scholarships available?",
+        "Scholarship options",
+        "Financial aid for students",
+        "Scholarships at JEC",
+        "Does JEC offer scholarships?",
+        "How can I apply for scholarships?"
+      ],
+      "responses": [
+        "Janakpur Engineering College offers various scholarships to deserving and needy students based on academic performance and financial need.",
+        "Scholarships are available for meritorious students and those in financial need. Detailed information can be obtained from the college's official website or the admissions office.",
+        "To apply for scholarships, students need to fill out the scholarship application form and provide relevant documents to support their application.",
+        "For more details on scholarship opportunities and the application process, please visit the college's website or contact the admissions office."
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "domains",
+      "patterns": [
+        "What are domains in Genshin Impact?",
+        "Can you explain domains and their purpose in the game?",
+        "How do I complete domains effectively?",
+        "Tell me about the different types of domains and their rewards.",
+        "What strategies can help me succeed in domains?"
+      ],
+      "responses": [
+        "Domains in Genshin Impact are special instanced areas that provide various challenges and rewards. They include dungeons, domains of hardship, and event-specific areas where you can obtain valuable items and materials.",
+        "Domains are special areas in Genshin Impact where you can participate in combat challenges or solve puzzles to earn rewards. They offer resources like artifacts, enhancement materials, and character ascension items.",
+        "To complete domains effectively, build a balanced team with appropriate elements to counter enemies, utilize strong gear and artifacts, and make sure to manage your resources and abilities efficiently during the challenges.",
+        "Different types of domains in Genshin Impact include elite boss domains, artifact domains, and elemental trial domains. Rewards vary by domain and can include high-level artifacts, enhancement materials, and character resources.",
+        "Success in domains can be achieved by preparing a well-rounded team, understanding the domain's mechanics, using elemental reactions to your advantage, and optimizing your character builds and equipment."
+      ],
+      "context": [""]
+    }
+  ]
+}
