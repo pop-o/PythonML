@@ -175,10 +175,10 @@ for epoch in range(num_epochs):
 epochs = range(1, num_epochs + 1)
 
 plt.figure(figsize=(12, 5))
-
+train_losses_numpy = [loss.detach().numpy() for loss in train_losses]
 # Plot training loss
 plt.subplot(1, 2, 1)
-plt.plot(epochs, train_losses, 'g', label='Training loss')
+plt.plot(epochs, train_losses_numpy, 'g', label='Training loss')
 plt.title('Training Loss over Epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
