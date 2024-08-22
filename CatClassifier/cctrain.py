@@ -9,8 +9,9 @@ from torchvision.transforms import transforms
 from torch.utils.data import DataLoader
 from torch.optim import Adam
 import torchvision
+import matplotlib.pyplot as plt
 import pathlib
-i=0
+
 #checking for device
 device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -105,6 +106,11 @@ num_epochs=20
 train_count=len(glob.glob(train_path+'/**/*'))
 test_count=len(glob.glob(test_path+'/**/*'))
 
+# Initialize lists to store training and test metrics
+train_losses = []
+test_accuracies = []
+train_accuracies = []
+
 #model training and savin best model
 
 best_accuracy=0
@@ -113,6 +119,7 @@ for epoch in range(num_epochs):
     model.train()
     train_accuracy=0.0
     train_loss=0.0
+    
     for i,(images,labels) in enumerate(train_loader):
         if torch.cuda.is_available():
             images=images.to(device)
@@ -130,18 +137,21 @@ for epoch in range(num_epochs):
 
         train_loss+=loss.cpu()*images.size(0)
         _,prediction=torch.max(outputs.data,1)
-        print("Train loss: ",i,train_loss)
-        i+=1
+        
         train_accuracy+=int(torch.sum(prediction==labels.data))
 
     train_accuracy=train_accuracy/train_count
     train_loss=train_loss/train_count
     
+    # Store train loss and accuracy
+    train_losses.append(train_loss)
+    train_accuracies.append(train_accuracy)
+    
     #evaluaiton on testinf datasert
     model.eval()
     test_accuracy=0.0
+    print("testing started")
     for i,(images,labels) in enumerate(test_loader):
-        print("Testing.")
         if torch.cuda.is_available():
             images=images.to(device)
             labels=labels.to(device)
@@ -151,6 +161,7 @@ for epoch in range(num_epochs):
         test_accuracy+=int(torch.sum(prediction==labels.data))
 
     test_accuracy=test_accuracy/test_count
+    test_accuracies.append(test_accuracy)
 
     print('Epoch: '+str(epoch)+' Train Loss: '+str(int(train_loss))+' Train Accuracy: '+ str(train_accuracy)+' Test accuracy: '+str(test_accuracy))
 
@@ -159,3 +170,27 @@ for epoch in range(num_epochs):
         print("Best model saved")
         torch.save(model.state_dict(),'best_checkpoint.model')
         best_accuracy=test_accuracy 
+        
+# Plotting the results
+epochs = range(1, num_epochs + 1)
+
+plt.figure(figsize=(12, 5))
+
+# Plot training loss
+plt.subplot(1, 2, 1)
+plt.plot(epochs, train_losses, 'g', label='Training loss')
+plt.title('Training Loss over Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+
+# Plot accuracy
+plt.subplot(1, 2, 2)
+plt.plot(epochs, train_accuracies, 'b', label='Training Accuracy')
+plt.plot(epochs, test_accuracies, 'r', label='Test Accuracy')
+plt.title('Training and Test Accuracy over Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+
+plt.show()
