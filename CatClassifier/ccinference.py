@@ -81,6 +81,7 @@ model.eval()
 
 #Transforms
 transformer=transforms.Compose([
+    transforms.Lambda(lambda img: img.convert('RGB')),
     transforms.Resize((150,150)),
     transforms.ToTensor(),  #0-255 to 0-1, numpy to tensors
     transforms.Normalize([0.5,0.5,0.5], # 0-1 to [-1,1] , formula (x-mean)/std
@@ -112,7 +113,7 @@ def prediction(img_path,transformer):
     
     return pred
     
-images_path=glob.glob(pred_path+'/*.jpg')
+images_path=glob.glob(pred_path+'/*')
 
 pred_dict={}
 

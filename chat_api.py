@@ -5,12 +5,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 import spacy
-import webbrowser
-
+from flask import Flask, request, jsonify
 
 # Load spaCy model
 nlp = spacy.load('en_core_web_sm')
-
 
 # Load intents and preprocessing data
 intents = json.loads(open('new_intents_genshin.json').read())
@@ -35,7 +33,6 @@ class ChatbotModel(nn.Module):
         out = self.softmax(out)
         return out
 
-# Modify path to your trained PyTorch model file
 model_path = 'best_genshin_chatbot.pth'
 model = ChatbotModel(input_size=len(words), hidden_size=256, output_size=len(classes))
 model.load_state_dict(torch.load(model_path))
@@ -69,39 +66,39 @@ def get_response(predicted_intent, intents_json):
             response = random.choice(intent['responses'])
             break
     return response
+
 def contains_link(response):
-    # A simple check for 'http' or 'https' in the response
-    if 'http' in response or 'https' in response:
-        return True
-    return False
+    return 'http' in response or 'https' in response
 
 def extract_link(response):
-    # Extract the link from the response (assuming the link is enclosed in <>)
     start_index = response.find('<')
     end_index = response.find('>')
     if start_index != -1 and end_index != -1:
         return response[start_index + 1:end_index]
     return None
 
-def ask_for_confirmation(link):
-    while True:
-        user_input = input(f"Do you want to go to this link? (yes/no): ").strip().lower()
-        if user_input in ["yes", "no"]:
-            return user_input == "yes"
-
-# Loading the transformer models for speech synthesis
-print("Hello! How can I help you today?")
-
-while True:
-    message = input("User: ")
+def chatbot_response(message):
     predicted_intent = predict_class(message)
     response = get_response(predicted_intent, intents)
-    print(f"Bot:{response}\n")
-
+    
     if contains_link(response):
         link = extract_link(response)
-        if link and ask_for_confirmation(link):
-            webbrowser.open(link)
-            continue
+        if link:
+            return {'response': response, 'link': link}
     
-    
+    return {'response': response}
+
+# Set up the Flask app
+app = Flask(__name__)
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    data = request.get_json()
+    user_message = data.get('message')
+    if user_message:
+        response = chatbot_response(user_message)
+        return jsonify(response)
+    return jsonify({'error': 'No message provided'}), 400
+
+if __name__ == '__main__':
+    app.run(debug=True)

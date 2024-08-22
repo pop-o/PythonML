@@ -1,11 +1,11 @@
-
+import os
 import torch
 import torch.nn as nn
 from torchvision.transforms import transforms
-from torch.autograd import Variable
 from PIL import Image
 import pathlib
-import glob
+from tkinter import filedialog, Tk
+
 
 # Paths
 train_path = "C:/Users/HP/Desktop/Extras/PythonML/CatClassifier/dataset/train"
@@ -72,26 +72,23 @@ transformer = transforms.Compose([
 def prediction(img, transformer):
     if isinstance(img, str):
         # If img is a path, load the image
-        image = Image.open(img)
+        image = Image.open(img).convert('RGB')
     else:
         # If img is a PIL Image, use it directly
-        image = img
-
+        image = img.covert('RGB')
+    
     image_tensor = transformer(image).float()
     image_tensor = image_tensor.unsqueeze_(0)
 
     if torch.cuda.is_available():
-        image_tensor = image_tensor.cuda()
+        image_tensor = image_tensor.to(device)
 
-    input = Variable(image_tensor)
-    output = model(input)
+    output = model(image_tensor)
     index = output.data.cpu().numpy().argmax()
 
     pred = classes[index]
     return pred
 
-# Example usage for taking an image from the user
-from tkinter import filedialog, Tk
 
 def select_image():
     root = Tk()
@@ -102,7 +99,8 @@ def select_image():
 user_image_path = select_image()
 
 if user_image_path:
+    file_name = os.path.basename(user_image_path)
     prediction_result = prediction(user_image_path, transformer)
-    print(f"Prediction: {prediction_result}")
+    print(f"\nFile: {file_name} \nPrediction: {prediction_result}")
 else:
     print("No image selected.")

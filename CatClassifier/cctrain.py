@@ -1,13 +1,13 @@
 #load librarires
-import os
 import numpy as np
+
+
 import torch
 import glob
 import torch.nn as nn
 from torchvision.transforms import transforms
 from torch.utils.data import DataLoader
 from torch.optim import Adam
-from torch.autograd import Variable
 import torchvision
 import pathlib
 i=0
@@ -18,6 +18,7 @@ print(torch.cuda.is_available())
 
 #transforms
 transformer=transforms.Compose([
+    transforms.Lambda(lambda img: img.convert('RGB')),
     transforms.Resize((150,150)),
     transforms.RandomHorizontalFlip(),
     transforms.ToTensor(), #0-255 to 0-1, numpy to tensors
@@ -98,11 +99,11 @@ model=ConvNet(num_classes=2).to(device)
 optimizer=Adam(model.parameters(),lr=0.001,weight_decay=0.0001)
 loss_function=nn.CrossEntropyLoss()
 
-num_epochs=10
+num_epochs=20
 
 #calculation the size af training and testing images
-train_count=len(glob.glob(train_path+'/**/*.jpg'))
-test_count=len(glob.glob(test_path+'/**/*.jpg'))
+train_count=len(glob.glob(train_path+'/**/*'))
+test_count=len(glob.glob(test_path+'/**/*'))
 
 #model training and savin best model
 
@@ -114,8 +115,8 @@ for epoch in range(num_epochs):
     train_loss=0.0
     for i,(images,labels) in enumerate(train_loader):
         if torch.cuda.is_available():
-            images=Variable(images.cuda())
-            labels=Variable(labels.cuda())
+            images=images.to(device)
+            labels=labels.to(device)
 
         
         optimizer.zero_grad()
@@ -140,9 +141,10 @@ for epoch in range(num_epochs):
     model.eval()
     test_accuracy=0.0
     for i,(images,labels) in enumerate(test_loader):
+        print("Testing.")
         if torch.cuda.is_available():
-            images=Variable(images.cuda())
-            labels=Variable(labels.cuda())
+            images=images.to(device)
+            labels=labels.to(device)
 
         outputs=model(images)
         _,prediction=torch.max(outputs.data,1)
@@ -154,5 +156,6 @@ for epoch in range(num_epochs):
 
     #save the best model
     if test_accuracy>best_accuracy:
+        print("Best model saved")
         torch.save(model.state_dict(),'best_checkpoint.model')
         best_accuracy=test_accuracy 
